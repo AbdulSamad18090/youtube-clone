@@ -1,5 +1,6 @@
+"use client"
 import React from "react";
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
 import {
   Youtube,
@@ -40,7 +41,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 flex h-14 items-center justify-between gap-4 border-b bg-white px-4">
+    <header className="sticky top-0 z-50 flex h-14 items-center justify-between gap-4 bg-white px-4">
       <div className="flex items-center gap-4">
         <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
           <SheetTrigger asChild>
@@ -50,6 +51,14 @@ const Header = () => {
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-[200px] sm:w-[250px] p-0">
+            <SheetTitle>
+              <div className="flex items-center gap-1 p-3 border-b">
+                <img src="/images/youtube-icon.png" alt="YT" className="h-6" />
+                <span className="text-xl font-semibold">YouTube</span>
+                <span className="text-[10px] text-gray-600">PK</span>
+              </div>
+            </SheetTitle>
+
             <ScrollArea className="h-full py-2">
               <div className="flex flex-col gap-2">
                 <Button
@@ -130,7 +139,7 @@ const Header = () => {
             </ScrollArea>
           </SheetContent>
         </Sheet>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-1 p-3">
           {/* <YoutubeIcon className="h-5 w-5 text-red-600" /> */}
           <img src="/images/youtube-icon.png" alt="YT" className="h-6" />
           <span className="text-xl font-semibold">YouTube</span>

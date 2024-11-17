@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { videosReducer } from "./slices/videosSlice"; // Adjust path as needed
+import { trendingVideosReducer } from "./slices/trendingVideosSlice"; // Adjust path as needed
+import { videoCategoriesReducer } from "./slices/videoCategorySlice";
+import { HomePageVideosReducer } from "./slices/homePageVideosSlice";
 
 // Configure the store
 const store = configureStore({
   reducer: {
-    videos: videosReducer,
+    homePageVideos: HomePageVideosReducer,
+    videoCategories: videoCategoriesReducer,
+    trendingVideos: trendingVideosReducer,
   },
 });
 
